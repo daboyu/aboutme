@@ -41,7 +41,7 @@ div.bg{
   margin-top:-53.95px;
   border-radius:32px;
   border: solid 1.5px #19B3B1;
-  box-shadow:0px 0px 70px -20px rgba(25,179,177,2);
+  box-shadow:0px 0px 70px -20px rgba(25,179,177,0.5);
 }
 .namecard hr{
   border-top: solid 0.5px #fff;
