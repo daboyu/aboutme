@@ -16,19 +16,19 @@ div.bg{
 
 .namecard{
   font-family: "微軟正黑體";
-  width:416px;height:260px;
+  width:624px;height:390px;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   margin: auto;
-  padding:25px;
+  padding:37.5px;
   border-radius:20px;
   margin-left:auto;
   margin-right:auto;
   background-color:rgba(3,75,97,1);
-  line-height:7px;
+  line-height:10.5px;
   text-align:center;
   letter-spacing:3px;
   color:#19B3B1;
@@ -36,9 +36,9 @@ div.bg{
 }
 .outline{
   position:absolute;
-  width:520px;height:364px;
-  margin-left:-53.95px;
-  margin-top:-53.95px;
+  width:780px;height:546px;
+  margin-left:-80.95px;
+  margin-top:-80.95px;
   border-radius:32px;
   border: solid 1.5px #19B3B1;
   box-shadow:0px 0px 70px -20px rgba(25,179,177,0.5);
@@ -49,25 +49,25 @@ div.bg{
 }
 .namecard h6{
   position:absolute;
-  font-size:15px;
-  left:152px;top:55px;
+  font-size:23px;
+  left:248px;top:82.5px;
   line-height:15px;
   letter-spacing:8px;
   color:#ffb9b3; 
 }
 .namecard h3{
   position: relative;
-  font-size: 25px;
-  top: 23px;
-  line-height:55px;
+  font-size: 32px;
+  top: 35px;
+  line-height:80px;
 }
 .namecard h2{
   position: relative;
-  font-size: 30px;
+  font-size: 45px;
 }
 .namecard p{
   color:rgba(190,211,212,1);
-  font-size:12px;
+  font-size:16px;
   line-height:20px;
 }
 .circle{
