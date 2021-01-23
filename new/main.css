@@ -118,12 +118,7 @@ div.bg{
   right:55px;
   top:80px;
 }
-/***.info{
+.info{
 	background-color:rgba(119,48,161,1);
 	width:auto;height:1080px;
-}***/
-#bg{
-  position: fixed;
-  left: 32px;
-  top: 32px;
 }
