@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="2023跨年直播九宮格，一次飽覽全台跨年晚會">
+<title>2023跨年直播</title>
+</head>
+<body onload="myFunction()">
+<body align="center">
+	<h2 style="color:red;"><div align="center" class="time_display" id="t2023"></div></h2>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/1G43tkP4LHE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/qoaDuYoVkFw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/a2_rTOV2API" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/-QlKh-YT8hM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/uPfCZN1nNmc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/TE8FccfS2I0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/IPfltLbpX8k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/j7bxX_9Ggeg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/6MXoYyRqG3o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	<div align="center">© POWERED BY DABO 2023 </div>
+	<script>
+		function myFunction() {
+			alert("歡迎來到2023跨年直播一覽，本網站建議使用電腦觀賞\n若頁面無法容納所有影片視窗，請嘗試縮小視窗或使用全螢幕(F11)\n使用方法：\n將9個直播畫面點開並靜音，將欲觀賞的畫面解除靜音\n才不會錯過喜歡的藝人喔！\n最後，祝大家新年快樂！");}	
+		var countDownDate = new Date("Jan 1, 2023 00:00:00").getTime();
+		var x = setInterval(timer, 1000);
+			  
+		function timer() {
+			var now = new Date().getTime();
+			var distance = countDownDate - now;
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        if (hours < 10){
+          hours = "0" + hours;
+        }
+        if (minutes < 10){
+          minutes = "0" + minutes;
+        }
+        if (seconds < 10){
+          seconds = "0" + seconds;
+        }
+				document.getElementById("t2023").innerHTML = "距離 2023 還有 " + days + "天 " + hours + "時   " + minutes + "分   " + seconds + "秒";
+			  if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("t2023").innerHTML = "🎉 2023 新年快樂🎉";
+				}
+			}
+	</script>
+</body>
+</html>
