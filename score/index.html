@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>學期成績計算神器</title>
+		<link rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+		<link rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+		<script src="./count.js" type="text/javascript"></script>
+	</head>
+	<!---選單--->
+	<body class="has-navbar-fixed-top">
+		<nav class="navbar is-white is-fixed-top is-expanded has-shadow"
+			role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item" href="#">
+					<h5 class="title is-5">學期成績計算神器 <span class="tag is-link is-light
+							is-rounded">V2.0</span></h5>
+				</a>
+			</div>
+			<!---Github--->
+			<div class="navbar-menu">
+				<div class="navbar-end">
+					<a class="navbar-item" href="https://github.com/yc97463/cal-score"
+						target="_blank">
+						<span class="icon" style="color: #333;">
+							<i class="fa-2x fab fa-github"></i>
+						</span>
+					</a>
+					<div class="navbar-item"></div>
+				</div>
+			</div>
+		</nav>
+		<!---內容--->
+		<section class="hero is-light is-fullheight-with-navbar">
+			<div class="columns">
+				<div class="column"></div>
+				<div class="column is-6 is-is-four-fifths-mobile">
+					<div class="block"></div>
+					<div class="block">
+						<article class="message is-link">
+							<div class="message-body">
+								使用說明：<br>
+								請輸入本學期一段、二段成績及平時成績。若未填寫三段成績，系統將幫您算出三段要考多少分才會通過。<br>
+								若填寫三段成績，系統將會計算本學期是否需要補考。
+							</div>
+						</article>
+					</div>
+					<div class="notification is-warning is-light">
+						<button class="delete"></button>
+						<strong>免責聲明：</strong><br>
+						本系統僅提供成績試算，因各校成績計算方式有些微差異，最終成績以學校公告為主。
+					</div>
+					<!---表單--->
+					<form>
+						<div class="block" id="form">
+							<div class="box">
+								<div class="columns is-hidden-mobile">
+									<div class="column"></div>
+									<div class="column is-8"></div>
+									<div class="column"></div>
+								</div>
+
+								<div class="columns">
+									<div class="column"></div>
+									<div class="column is-4">
+										<div class="block">
+											一段成績：
+											<input class="input" id="score0" type="number" max="100" min="0"
+												placeholder="一段成績(必填)" required>
+										</div>
+										<div class="block">
+											二段成績：
+											<input class="input" id="score1" type="number" max="100" min="0"
+												placeholder="二段成績(必填)" required>
+										</div>
+										<div class="block">
+											三段成績：
+											<input class="input" id="score2" type="number" max="100" min="0"
+												placeholder="三段成績">
+										</div>
+										<div class="block">
+											平時成績：
+											<input class="input" id="score3" type="number" max="100" min="0"
+												placeholder="平時成績(必填)" required>
+										</div>
+									</div>
+									<div class="column is-4">
+										<div class="block">
+											一段比例：
+											<div class="field has-addons">
+												<div class="control has-icons-right">
+													<input class="input" id="rate0" type="text" max="100" min="0"
+														placeholder="一段比例(必填)" value="20" required>
+												</div>
+												<p class="control">
+													<a class="button is-static">%</a>
+												</p>
+											</div>
+										</div>
+										<div class="block">
+											二段比例：
+											<div class="field has-addons">
+												<div class="control has-icons-right">
+													<input class="input" id="rate1" type="text" max="100" min="0"
+														placeholder="二段比例(必填)" value="20" required>
+												</div>
+												<p class="control">
+													<a class="button is-static">%</a>
+												</p>
+											</div>
+										</div>
+										<div class="block">
+											三段比例：
+											<div class="field has-addons">
+												<div class="control has-icons-right">
+													<input class="input" id="rate2" type="text" max="100" min="0"
+														placeholder="三段比例(必填)" value="30">
+												</div>
+												<p class="control">
+													<a class="button is-static">%</a>
+												</p>
+											</div>
+										</div>
+										<div class="block">
+											平時成績比例：
+											<div class="field has-addons">
+												<div class="control has-icons-right">
+													<input class="input" id="rate3" type="text" max="100" min="0"
+														placeholder="平時成績比例(必填)" value="30" required>
+												</div>
+												<p class="control">
+													<a class="button is-static">%</a>
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="column"></div>
+								</div>
+
+								<div class="columns">
+									<div class="column"></div>
+									<div class="column is-6">
+										<button class="button is-fullwidth is-link is-outlined"
+											onclick="countScore()">查詢GOGO！</button>
+									</div>
+									<div class="column"></div>
+								</div>
+								<!--Result Start-->
+								<center><div id="result"></div></center>
+								<!--Result End-->
+								<div class="block"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="column"></div>
+			</div>
+		</section>
+	</body>
+
+	<footer>
+		<section class="hero is-small is-white">
+			<div class="hero-foot">
+				<center>本系統由 <a target="_blank" href="https://me.imych.one/"
+						style="color:blue">黃猷珵</a> 及 <a target="_blank" href="https://dabo.xyz/"
+						style="color:blue">黃柏諭</a> 開發設計<br></center>
+			</div>
+		</section>
+	</footer>
+
+</html>
