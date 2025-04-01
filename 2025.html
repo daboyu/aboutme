@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="2025跨年直播九宮格，一次飽覽全台跨年晚會">
+<title>2025跨年直播</title>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M10YKE9T4H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M10YKE9T4H');
+</script>
+<body onload="myFunction()">
+<body align="center">
+	<h2 style="color:red;"><div align="center" class="time_display" id="t2025"></div></h2>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/lMU9FseF9Dw?autoplay=1&mute=1" <!-- 台北 --> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/DhccGRnAWa4?autoplay=1&mute=1" <!-- 桃園 --> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/Iq-GJsHO9S0?autoplay=1&mute=1" <!-- 新竹 --> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/gRPLgTowFSA?autoplay=1&mute=1" <!-- 台中 --> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/nYOMfgz7l30?autoplay=1&mute=1" <!-- 嘉義 --> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/BcOxf414JR0?autoplay=1&mute=1" <!-- 台南 --> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/KVFQjlO1-GY?autoplay=1&mute=1" <!-- 高雄 --> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/WAsy0Qsd_c4?autoplay=1&mute=1" <!-- 花蓮 --> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/mcipCrHvQVw?autoplay=1&mute=1" <!-- 台東 --> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	<div align="center">© POWERED BY DABO 2025 </div>
+	<script>
+		function myFunction() {
+			alert("歡迎來到2025跨年直播一覽，本網站建議使用電腦觀賞\n若頁面無法容納所有影片視窗，請嘗試縮小視窗或使用全螢幕(F11)\n系統預設會是靜音，記得將欲觀賞的畫面解除靜音\n才不會錯過喜歡的藝人喔！\n最後，祝大家新年快樂！");}	
+		var countDownDate = new Date("Jan 1, 2025 00:00:00").getTime();
+		var x = setInterval(timer, 1000);
+			  
+		function timer() {
+			var now = new Date().getTime();
+			var distance = countDownDate - now;
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        if (hours < 10){
+          hours = "0" + hours;
+        }
+        if (minutes < 10){
+          minutes = "0" + minutes;
+        }
+        if (seconds < 10){
+          seconds = "0" + seconds;
+        }
+				document.getElementById("t2025").innerHTML = "距離 2025 還有 " + days + "天 " + hours + "時   " + minutes + "分   " + seconds + "秒";
+			  if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("t2025").innerHTML = "🎉 2025 新年快樂🎉";
+				}
+			}
+	</script>
+</body>
+</html>
