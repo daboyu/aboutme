@@ -36,26 +36,36 @@
     }
 
     .number-section {
-      margin: 2em 0em 2em 0em;
+      margin: 2em 0em;
     }
 
     .number-line {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: center;
-      gap: 2em;
+      gap: 1em;
+      flex-wrap: wrap;
     }
 
-    .number-label,
-    .number-unit {
+    .label {
       font-size: 1.2em;
       color: #000;
     }
 
+    .number-with-unit {
+      display: flex;
+      align-items: baseline;
+      font-weight: bold;
+      color: #d32f2f;
+    }
+
     .number {
       font-size: 4em;
-      color: #d32f2f;
-      font-weight: bold;
+    }
+
+    .unit {
+      font-size: 1.5rem;
+      margin-left: 0.2em;
     }
 
     .info {
@@ -113,39 +123,37 @@
       color: #a06da8;
     }
 
-    .number-with-unit .unit {
-      font-size: 1.5rem;
-      color: #000;
-      margin-left: 0.25em;
-    }
-
+    /* 手機版調整 */
     @media (max-width: 768px) {
       .number-line {
         flex-direction: column;
-        align-items: center;
-        gap: 0.2em;
+        gap: 0.5em;
       }
 
       .number {
-        font-size: 4em;
-        line-height: 1;
+        font-size: 2.8em;
       }
 
-      .number-with-unit {
-        font-size: 4rem;
-        font-weight: bold;
-        color: #d32f2f;
-      }
-
-      .number-with-unit .unit {
-        font-size: inherit;
-        color: inherit;
-        margin-left: 0.2em;
+      .unit {
+        font-size: 1.2rem;
       }
 
       .info {
         font-size: 0.95em;
         padding: 0 0.5em;
+      }
+
+      .card {
+        padding: 2em 1.2em;
+        margin: 2em 1em;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .footer {
+        margin-top: 2em;
       }
     }
 
@@ -159,41 +167,22 @@
         align-items: center;
         gap: 0.3em;
       }
-
-      .card {
-        padding: 2em 1.2em;
-        margin: 2em 1em;
-      }
-
-      h1 {
-        font-size: 1.5em;
-      }
-
-      .number-line {
-        gap: 0.5em;
-      }
-
-      .number {
-        font-size: 3em;
-      }
-
-      .footer {
-        margin-top: 2em;
-      }
     }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>文化大學學生會<br>Adobe CC 學生團購方案</h1>
+
     <div class="number-section">
       <div class="number-line">
+        <div class="label">目前參加人數</div>
         <div class="number-with-unit">
           <span class="number" id="count">284</span><span class="unit">人</span>
         </div>
-        <div class="label">目前參加人數</div>
       </div>
     </div>
+
     <div class="info" id="infoText">正在載入資料...</div>
 
     <div class="progress-container">
