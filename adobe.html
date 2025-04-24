@@ -1,247 +1,249 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="文化大學學生會 Adobe 學生方案團購進度" />
-    <meta name="description" content="中國文化大學學生會 x 長峰資訊聯手推出學生專屬 Adobe CC 優惠團購計畫，讓你用最小的花費，發揮最大的創意" />
-    <meta property="og:title" content="文化大學學生會 Adobe 學生方案團購進度" />
-    <title>文化大學 Adobe 學生方案團購進度</title>
-    <style>
-      body {
-        font-family: "Segoe UI", sans-serif;
-        text-align: center;
-        padding: 2em;
-        margin: 0;
-        background: linear-gradient(135deg, #f9d3ff, #d3f8ff);
-        background-attachment: fixed;
-        background-size: cover;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="文化大學學生會 Adobe 學生方案團購進度">
+  <meta name="description" content="中國文化大學學生會 x 長峰資訊聯手推出學生專屬 Adobe CC 優惠團購計畫，讓你用最小的花費，發揮最大的創意">
+  <meta property="og:title" content="文化大學學生會 Adobe 學生方案團購進度">
+  <title>文化大學 Adobe 學生方案團購進度</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      text-align: center;
+      padding: 2em;
+      margin: 0;
+      background: linear-gradient(135deg, #f9d3ff, #d3f8ff);
+      background-attachment: fixed;
+      background-size: cover;
+    }
 
-      .card {
-        background: rgba(255, 255, 255, 0.85);
-        padding: 3em;
-        max-width: 600px;
-        margin: 5em auto;
-        border-radius: 1.5em;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-      }
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 3em;
+      max-width: 600px;
+      margin: 5em auto;
+      border-radius: 1.5em;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
 
-      h1 {
-        font-size: 2.2em;
-        color: #333;
-        margin-bottom: 0.5em;
-      }
+    h1 {
+      font-size: 2.2em;
+      color: #333;
+      margin-bottom: 0.5em;
+    }
 
-      .number-section {
-        margin: 2em 0;
-      }
+    .number-section {
+      margin: 2em 0em 2em 0em;
+    }
 
+    .number-line {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 2em;
+    }
+
+    .number-label,
+    .number-unit {
+      font-size: 1.2em;
+      color: #000;
+    }
+
+    .number {
+      font-size: 4em;
+      color: #d32f2f;
+      font-weight: bold;
+    }
+
+    .info {
+      font-size: 1.1em;
+      color: #444;
+      margin-bottom: 2em;
+      word-wrap: break-word;
+      line-height: 1.6;
+    }
+
+    .progress-container {
+      position: relative;
+      height: 30px;
+      width: 100%;
+      background: #eee;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-top: 1em;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #ff6a6a, #ffb347);
+      width: 0;
+      transition: width 0.5s ease-in-out;
+    }
+
+    .markers {
+      position: relative;
+      height: 1.5em;
+      margin-top: 0.3em;
+    }
+
+    .marker {
+      position: absolute;
+      transform: translateX(-50%);
+      font-size: 0.9em;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    .footer {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: -5em;
+    }
+
+    .footer-link {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-link:hover {
+      color: #a06da8;
+    }
+
+    .number-with-unit .unit {
+      font-size: 1.5rem;
+      color: #000;
+      margin-left: 0.25em;
+    }
+
+    @media (max-width: 768px) {
       .number-line {
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        gap: 2em;
-      }
-
-      .number-label,
-      .number-unit {
-        font-size: 1.2em;
-        color: #000;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2em;
       }
 
       .number {
         font-size: 4em;
-        color: #d32f2f;
-        font-weight: bold;
-      }
-
-      .info {
-        font-size: 1.1em;
-        color: #444;
-        margin-bottom: 2em;
-      }
-
-      .progress-container {
-        position: relative;
-        height: 30px;
-        width: 100%;
-        background: #eee;
-        border-radius: 15px;
-        overflow: hidden;
-        margin-top: 1em;
-      }
-
-      .progress-bar {
-        height: 100%;
-        background: linear-gradient(90deg, #ff6a6a, #ffb347);
-        width: 0;
-        transition: width 0.5s ease-in-out;
-      }
-
-      .markers {
-        position: relative;
-        height: 1.5em;
-        margin-top: 0.3em;
-      }
-
-      .marker {
-        position: absolute;
-        transform: translateX(-50%);
-        font-size: 0.9em;
-        color: #666;
-        white-space: nowrap;
-      }
-
-      .footer {
-        font-size: 0.9em;
-        color: #666;
-        margin-top: -5em;
-      }
-
-      .footer-link {
-        color: #666;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .footer-link:hover {
-        color: #a06da8;
+        line-height: 1;
       }
 
       .number-with-unit {
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        gap: 0.2em;
+        font-size: 4rem;
+        font-weight: bold;
+        color: #d32f2f;
       }
 
-      .label {
-        font-size: 1.1em;
-        color: #333;
+      .number-with-unit .unit {
+        font-size: inherit;
+        color: inherit;
+        margin-left: 0.2em;
       }
 
-      @media (max-width: 768px) {
-        .number-line {
-          flex-direction: column;
-          align-items: center;
-          gap: 0.5em;
-        }
+      .info {
+        font-size: 0.95em;
+        padding: 0 0.5em;
+      }
+    }
 
-        .number {
-          font-size: 4em;
-          line-height: 1;
-        }
-
-        .number-with-unit {
-          font-size: 4rem;
-          font-weight: bold;
-          color: #d32f2f;
-        }
-
-        .number-with-unit .unit {
-          font-size: inherit;
-          color: inherit;
-        }
+    @media (max-width: 600px) {
+      .progress-container {
+        height: 20px;
       }
 
-      @media (max-width: 600px) {
-        .progress-container {
-          height: 20px;
-        }
-
-        .markers {
-          flex-direction: column;
-          align-items: center;
-          gap: 0.3em;
-        }
-
-        .card {
-          padding: 2em 1.2em;
-          margin: 2em 1em;
-        }
-
-        h1 {
-          font-size: 1.5em;
-        }
-
-        .number {
-          font-size: 3em;
-        }
-
-        .info {
-          font-size: 1em;
-        }
-
-        .footer {
-          margin-top: 2em;
-        }
+      .markers {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3em;
       }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <h1>文化大學學生會<br />Adobe CC 學生團購方案</h1>
-      <div class="number-section">
-        <div class="number-line">
-          <div class="number-with-unit">
-            <span id="count" class="number">0</span><span class="unit">人</span>
-          </div>
-          <div class="label">目前參加人數</div>
+
+      .card {
+        padding: 2em 1.2em;
+        margin: 2em 1em;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .number-line {
+        gap: 0.5em;
+      }
+
+      .number {
+        font-size: 3em;
+      }
+
+      .footer {
+        margin-top: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>文化大學學生會<br>Adobe CC 學生團購方案</h1>
+    <div class="number-section">
+      <div class="number-line">
+        <div class="number-with-unit">
+          <span class="number" id="count">284</span><span class="unit">人</span>
         </div>
-      </div>
-      <div class="info" id="infoText">正在載入資料...</div>
-
-      <div class="progress-container">
-        <div id="progressBar" class="progress-bar"></div>
-      </div>
-      <div class="markers">
-        <span class="marker" style="left: 0%;">0人</span>
-        <span class="marker" style="left: 40%;">100人</span>
-        <span class="marker" style="left: 100%;">250人</span>
+        <div class="label">目前參加人數</div>
       </div>
     </div>
+    <div class="info" id="infoText">正在載入資料...</div>
 
-    <div class="footer">
-      &copy; 2025 <a href="https://www.instagram.com/ccusa_/" class="footer-link" target="_blank">中國文化大學 21 屆學生會</a> 製作
+    <div class="progress-container">
+      <div id="progressBar" class="progress-bar"></div>
     </div>
+    <div class="markers">
+      <span class="marker" style="left: 0%;">0人</span>
+      <span class="marker" style="left: 40%;">100人</span>
+      <span class="marker" style="left: 100%;">250人</span>
+    </div>
+  </div>
 
-    <script>
-      const GAS_URL = "https://script.google.com/macros/s/AKfycbw8ZFW6jBZjXy03d6c-MC2Y5E-125B0U23S7T97HXQKyZIAZY7BjdHC3J1oyZ-k62_8pg/exec";
+  <div class="footer">
+    &copy; 2025 <a href="https://www.instagram.com/ccusa_/" class="footer-link" target="_blank">中國文化大學 21 屆學生會</a> 製作
+  </div>
 
-      async function loadCount() {
-        try {
-          const response = await fetch(`${GAS_URL}?api=getCount`);
-          const data = await response.json();
-          const count = data.count;
-          document.getElementById("count").innerText = count;
+  <script>
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbw8ZFW6jBZjXy03d6c-MC2Y5E-125B0U23S7T97HXQKyZIAZY7BjdHC3J1oyZ-k62_8pg/exec";
 
-          const threshold1 = 100;
-          const threshold2 = 250;
-          const progressPercent = Math.min((count / threshold2) * 100, 100);
-          document.getElementById("progressBar").style.width = `${progressPercent}%`;
+    async function loadCount() {
+      try {
+        const response = await fetch(`${GAS_URL}?api=getCount`);
+        const data = await response.json();
+        const count = data.count;
+        document.getElementById("count").innerText = count;
 
-          const remain = threshold1 - count;
-          const remain2 = threshold2 - count;
-          let message = "";
+        const threshold1 = 100;
+        const threshold2 = 250;
+        const progressPercent = Math.min((count / threshold2) * 100, 100);
+        document.getElementById("progressBar").style.width = `${progressPercent}%`;
 
-          if (remain > 0) {
-            message = `距離成團還差 ${remain} 人，請大家將<a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠消息</a>分享給朋友吧！`;
-          } else if (remain2 > 0) {
-            message = `已達到成團門檻，距離最優惠價格還差 ${remain2} 人<br>請大家將<a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠消息</a>分享給朋友吧！`;
-          } else {
-            message = `🎉 已達到最優惠價格！感謝大家熱情參與！<br><a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠登記</a>將在5月9日截止，請把握機會！`;
-          }
+        const remain = threshold1 - count;
+        const remain2 = threshold2 - count;
+        let message = "";
 
-          document.getElementById("infoText").innerHTML = message;
-        } catch (e) {
-          document.getElementById("infoText").innerText = "無法載入資料。";
+        if (remain > 0) {
+          message = `距離成團還差 ${remain} 人，請大家將<a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠消息</a>分享給朋友吧！`;
+        } else if (remain2 > 0) {
+          message = `已達到成團門檻，距離最優惠價格還差 ${remain2} 人<br>請大家將<a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠消息</a>分享給朋友吧！`;
+        } else {
+          message = `🎉 已達到最優惠價格！感謝大家熱情參與！<br><a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠登記</a>將在5月9日截止，請把握機會！`;
         }
-      }
 
-      loadCount();
-    </script>
-  </body>
+        document.getElementById("infoText").innerHTML = message;
+      } catch (e) {
+        document.getElementById("infoText").innerText = "無法載入資料。";
+      }
+    }
+
+    loadCount();
+  </script>
+</body>
 </html>
