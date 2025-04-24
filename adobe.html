@@ -1,238 +1,181 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="title" content="文化大學學生會 Adobe 學生方案團購進度">
-  <meta name="description" content="中國文化大學學生會 x 長峰資訊聯手推出學生專屬 Adobe CC 優惠團購計畫，讓你用最小的花費，發揮最大的創意">
-  <meta property="og:title" content="文化大學學生會 Adobe 學生方案團購進度">
-  <title>文化大學 Adobe 學生方案團購進度</title>
-  <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      text-align: center;
-      padding: 2em;
-      margin: 0;
-      background: linear-gradient(135deg, #f9d3ff, #d3f8ff);
-      background-attachment: fixed;
-      background-size: cover;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 3em;
-      max-width: 600px;
-      margin: 5em auto;
-      border-radius: 1.5em;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    h1 {
-      font-size: 2.2em;
-      color: #333;
-      margin-bottom: 0.5em;
-    }
-
-    .number-section {
-      margin: 2em 0em;
-    }
-
-    .number-line {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1em;
-      flex-wrap: wrap;
-    }
-
-    .label {
-      font-size: 1.2em;
-      color: #000;
-    }
-
-    .number-with-unit {
-      display: flex;
-      align-items: baseline;
-      font-weight: bold;
-      color: #d32f2f;
-    }
-
-    .number {
-      font-size: 4em;
-    }
-
-    .unit {
-      font-size: 1.5rem;
-      margin-left: 0.2em;
-    }
-
-    .info {
-      font-size: 1.1em;
-      color: #444;
-      margin-bottom: 2em;
-      word-wrap: break-word;
-      line-height: 1.6;
-    }
-
-    .progress-container {
-      position: relative;
-      height: 30px;
-      width: 100%;
-      background: #eee;
-      border-radius: 15px;
-      overflow: hidden;
-      margin-top: 1em;
-    }
-
-    .progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #ff6a6a, #ffb347);
-      width: 0;
-      transition: width 0.5s ease-in-out;
-    }
-
-    .markers {
-      position: relative;
-      height: 1.5em;
-      margin-top: 0.3em;
-    }
-
-    .marker {
-      position: absolute;
-      transform: translateX(-50%);
-      font-size: 0.9em;
-      color: #666;
-      white-space: nowrap;
-    }
-
-    .footer {
-      font-size: 0.9em;
-      color: #666;
-      margin-top: -5em;
-    }
-
-    .footer-link {
-      color: #666;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .footer-link:hover {
-      color: #a06da8;
-    }
-
-    /* 手機版調整 */
-    @media (max-width: 768px) {
-      .number-line {
-        flex-direction: column;
-        gap: 0.5em;
-      }
-
-      .number {
-        font-size: 2.8em;
-      }
-
-      .unit {
-        font-size: 1.2rem;
-      }
-
-      .info {
-        font-size: 0.95em;
-        padding: 0 0.5em;
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 響應式 meta 標籤 -->
+    <meta name="title" content="文化大學學生會 Adobe 學生方案團購進度">
+    <meta name="description" content="中國文化大學學生會 x 長峰資訊聯手推出學生專屬 Adobe CC 優惠團購計畫，讓你用最小的花費，發揮最大的創意">
+    <meta property=”og:title” content=”文化大學學生會 Adobe 學生方案團購進度”>
+    <title>文化大學 Adobe 學生方案團購進度</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        text-align: center;
+        padding: 2em;
+        margin: 0;
+        background: linear-gradient(135deg, #f9d3ff, #d3f8ff);
+        background-attachment: fixed;
+        background-size: cover;
       }
 
       .card {
-        padding: 2em 1.2em;
-        margin: 2em 1em;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 3em;
+        max-width: 600px;
+        margin: 5em auto;
+        border-radius: 1.5em;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
       }
 
       h1 {
-        font-size: 1.5em;
+        font-size: 2.2em;
+        color: #333;
+        margin-bottom: 0.5em;
+      }
+
+      .number-section {
+        margin: 2em 0em 2em 0em;
+      }
+
+      .number-line {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 2em;
+      }
+
+      .number-label,
+      .number-unit {
+        font-size: 1.2em;
+        color: #000;
+      }
+
+      .number {
+        font-size: 4em;
+        color: #d32f2f;
+        font-weight: bold;
+      }
+
+      .info {
+        font-size: 1.1em;
+        color: #444;
+        margin-bottom: 2em;
+      }
+
+      .progress-container {
+        position: relative;
+        height: 30px;
+        width: 100%;
+        background: #eee;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-top: 1em;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #ff6a6a, #ffb347);
+        width: 0;
+        transition: width 0.5s ease-in-out;
+      }
+      
+      .markers {
+        position: relative;
+        height: 1.5em;
+        margin-top: 0.3em;
+      }
+
+      .marker {
+        position: absolute;
+        transform: translateX(-50%);
+        font-size: 0.9em;
+        color: #666;
+        white-space: nowrap;
       }
 
       .footer {
-        margin-top: 2em;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .progress-container {
-        height: 20px;
+        font-size: 0.9em;
+        color: #666;
+        margin-top: -5em;
       }
 
-      .markers {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.3em;
+      .footer-link {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h1>文化大學學生會<br>Adobe CC 學生團購方案</h1>
 
-    <div class="number-section">
-      <div class="number-line">
-        <div class="label">目前參加人數</div>
-        <div class="number-with-unit">
-          <span class="number" id="count">284</span><span class="unit">人</span>
+      .footer-link:hover {
+        color: #a06da8;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>文化大學學生會<br>Adobe CC 學生團購方案</h1>
+      <div class="number-section">
+        <div class="number-line">
+          <span class="number-label">目前參加人數</span>
+          <div id="count" class="number">--</div>
+          <span class="number-unit">人</span>
         </div>
+      </div>
+      <div class="info" id="infoText">正在載入資料...</div>
+
+      <div class="progress-container">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+      <div class="markers">
+       <span class="marker" style="left: 0%;">0人</span>
+        <span class="marker" style="left: 40%;">100人</span>
+        <span class="marker" style="left: 100%;">250人</span>
       </div>
     </div>
 
-    <div class="info" id="infoText">正在載入資料...</div>
-
-    <div class="progress-container">
-      <div id="progressBar" class="progress-bar"></div>
+    <div class="footer">
+      &copy; 2025 <a href="https://www.instagram.com/ccusa_/" class="footer-link" target="_blank">中國文化大學 21 屆學生會</a> 製作
     </div>
-    <div class="markers">
-      <span class="marker" style="left: 0%;">0人</span>
-      <span class="marker" style="left: 40%;">100人</span>
-      <span class="marker" style="left: 100%;">250人</span>
-    </div>
-  </div>
 
-  <div class="footer">
-    &copy; 2025 <a href="https://www.instagram.com/ccusa_/" class="footer-link" target="_blank">中國文化大學 21 屆學生會</a> 製作
-  </div>
 
-  <script>
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbw8ZFW6jBZjXy03d6c-MC2Y5E-125B0U23S7T97HXQKyZIAZY7BjdHC3J1oyZ-k62_8pg/exec";
+<script>
+  const GAS_URL = "https://script.google.com/macros/s/AKfycbw8ZFW6jBZjXy03d6c-MC2Y5E-125B0U23S7T97HXQKyZIAZY7BjdHC3J1oyZ-k62_8pg/exec";
 
-    async function loadCount() {
-      try {
-        const response = await fetch(`${GAS_URL}?api=getCount`);
-        const data = await response.json();
-        const count = data.count;
-        document.getElementById("count").innerText = count;
+  async function loadCount() {
+    try {
+      const response = await fetch(`${GAS_URL}?api=getCount`);
+      const data = await response.json();
+      const count = data.count;
+      document.getElementById("count").innerText = count;
 
-        const threshold1 = 100;
-        const threshold2 = 250;
-        const progressPercent = Math.min((count / threshold2) * 100, 100);
-        document.getElementById("progressBar").style.width = `${progressPercent}%`;
+      const threshold1 = 100;
+      const threshold2 = 250;
+      const progressPercent = Math.min((count / threshold2) * 100, 100);
+      document.getElementById("progressBar").style.width = `${progressPercent}%`;
 
-        const remain = threshold1 - count;
-        const remain2 = threshold2 - count;
-        let message = "";
+      const remain = threshold1 - count;
+      const remain2 = threshold2 - count;
+      let message = "";
 
-        if (remain > 0) {
-          message = `距離成團還差 ${remain} 人，請大家將<a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠消息</a>分享給朋友吧！`;
-        } else if (remain2 > 0) {
-          message = `已達到成團門檻，距離最優惠價格還差 ${remain2} 人<br>請大家將<a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠消息</a>分享給朋友吧！`;
-        } else {
-          message = `🎉 已達到最優惠價格！感謝大家熱情參與！<br><a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠登記</a>將在5月9日截止，請把握機會！`;
-        }
-
-        document.getElementById("infoText").innerHTML = message;
-      } catch (e) {
-        document.getElementById("infoText").innerText = "無法載入資料。";
+      if (remain > 0) {
+        message = `距離成團還差 ${remain} 人，請大家將<a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠消息</a>分享給朋友吧！`;
+      } else if (remain2 > 0) {
+        message = `已達到成團門檻，距離最優惠價格還差 ${remain2} 人<br>請大家將<a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠消息</a>分享給朋友吧！`;
+      } else {
+        message = `🎉 已達到最優惠價格！感謝大家熱情參與！<br><a href="https://forms.gle/MCBQfTQfukVCVA4Y6" style="color:#a06da8;" target="_blank">優惠登記</a>將在5月9日截止，請把握機會！`;
       }
-    }
 
-    loadCount();
-  </script>
-</body>
+      document.getElementById("infoText").innerHTML = message;
+
+    } catch (e) {
+      document.getElementById("infoText").innerText = "無法載入資料。";
+    }
+  }
+
+  loadCount();
+</script>
+
+  </body>
 </html>
