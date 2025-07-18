@@ -8,6 +8,34 @@
 		<link rel="icon" href="/icon.png" type="image/x-icon" />
 		<link rel="shortcut icon" href="images/icon.png" type="image/x-icon" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+		#typewriter {
+		  height: 2em;
+		  line-height: 2em;
+		  display: block;
+		  padding: 0;
+		  overflow: hidden;
+		}
+		body {
+		  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb, #fbc2eb, #a6c1ee);
+		  background-size: 400% 400%;
+		  animation: gradientBG 15s ease infinite;
+		}
+		@keyframes gradientBG {
+		  0% {
+			background-position: 0% 50%;
+		  }
+		  50% {
+			background-position: 100% 50%;
+		  }
+		  100% {
+			background-position: 0% 50%;
+		  }
+		}
+		#main {
+		  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12), 0 1.5px 6px 0 rgba(0,0,0,0.10);
+		}
+		</style>
 	<!-- Facebook Opengraph -->
 		<meta property="og:url" content="https://dabo.xyz/index.html" />
 		<meta property="og:locale" content="zh_TW" />
@@ -32,7 +60,7 @@
 						<header>
 						  <span class="avatar"><img src="images/Dabo.jpg" alt="" /></span>
 							<h1>Dabo Huang</h1>
-							<p>不務正業的斜槓大學生</p>
+							<p id="typewriter"></p>
 						</header>
 						<footer>
 			  <ul class="icons">
@@ -61,6 +89,46 @@
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 			</script>
+
+<script>
+const texts = [
+  "不務正業的斜槓大學生",
+  "熱愛學習的新世代",
+  "喜歡挑戰的創作者",
+  "持續成長的工程師"
+];
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typeSpeed = 100;
+const deleteSpeed = 50;
+const delayBetween = 1500;
+const typewriter = document.getElementById('typewriter');
+
+function type() {
+  const currentText = texts[textIndex];
+  if (isDeleting) {
+    typewriter.textContent = currentText.substring(0, charIndex--);
+    if (charIndex < 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+      typewriter.innerHTML = "<span style='opacity:0'>不務正業的斜槓大學生</span>";
+      setTimeout(type, 500);
+    } else {
+      setTimeout(type, deleteSpeed);
+    }
+  } else {
+    typewriter.textContent = currentText.substring(0, charIndex++);
+    if (charIndex > currentText.length) {
+      isDeleting = true;
+      setTimeout(type, delayBetween);
+    } else {
+      setTimeout(type, typeSpeed);
+    }
+  }
+}
+type();
+</script>
 
 	</body>
 </html>
